@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classroom Management System</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+  <h1>Classroom Management System</h1>
+  <hr>
+  <h2>Update Classroom</h2>
+
+  <form action="#" th:action="@{/department/save}" th:object="${department}" method="POST" enctype="multipart/form-data">
+    <input type="hidden" th:field="*{id}" />
+    <label>Tên khoa:</label>
+    <input type="text" th:field="*{departmentName}" placeholder="department name" class="form-control mb-4 col-4">
+    <button type="submit" class="btn btn-info col-2"> Update Department</button>
+  </form>
+
+  <hr>
+
+  <a th:href="@{/department/view}"> Back to Department List</a>
+</div>
+</body>
+
+</html>
